@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cabal Guild Score — Score Calculator</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Cabal Guild Score — ระบบคำนวณคะแนน</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:       #070910;
@@ -28,7 +28,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Sarabun', sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -39,7 +39,10 @@ body {
 }
 
 /* ── HEADER ── */
-.header { text-align: center; margin-bottom: 32px; }
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
 .header-badge {
   display: inline-block;
   background: linear-gradient(135deg, rgba(232,184,75,0.15), rgba(232,184,75,0.05));
@@ -51,7 +54,7 @@ body {
   color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 12px;
-  font-weight: 600;
+  font-weight: 500;
 }
 h1 {
   font-family: 'Cinzel', serif;
@@ -60,7 +63,9 @@ h1 {
   color: var(--gold2);
   letter-spacing: 2px;
   line-height: 1.2;
-  text-shadow: 0 0 40px rgba(232,184,75,0.3), 0 0 80px rgba(232,184,75,0.1);
+  text-shadow:
+    0 0 40px rgba(232,184,75,0.3),
+    0 0 80px rgba(232,184,75,0.1);
 }
 h1 span { color: var(--accent); }
 .header-sub {
@@ -158,8 +163,8 @@ h1 span { color: var(--accent); }
   margin-bottom: 10px;
 }
 .tier-label {
-  width: 100px;
-  font-size: 0.82em;
+  width: 74px;
+  font-size: 0.84em;
   font-weight: 600;
   color: var(--text);
 }
@@ -167,7 +172,7 @@ h1 span { color: var(--accent); }
 .tier-mult {
   font-size: 0.74em;
   color: var(--muted);
-  width: 56px;
+  width: 52px;
   text-align: center;
 }
 .tier-score-preview {
@@ -184,7 +189,7 @@ h1 span { color: var(--accent); }
   border-radius: 7px;
   padding: 7px 10px;
   color: var(--text);
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Sarabun', sans-serif;
   font-size: 0.88em;
   text-align: center;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -196,10 +201,18 @@ h1 span { color: var(--accent); }
   box-shadow: 0 0 0 3px rgba(91,156,246,0.12);
 }
 .num-input::-webkit-inner-spin-button { opacity: 0.5; }
-.tier-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+/* tier accent dots */
+.tier-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
 
 /* ── CLASS INPUTS ── */
-.class-group { margin-bottom: 16px; }
+.class-group {
+  margin-bottom: 16px;
+}
 .class-group-header {
   display: flex;
   align-items: center;
@@ -224,15 +237,27 @@ h1 span { color: var(--accent); }
   color: var(--range);
   border: 1px solid rgba(74,184,232,0.25);
 }
-.class-bonus-note { font-size: 0.72em; color: var(--muted); margin-left: auto; }
+.class-bonus-note {
+  font-size: 0.72em;
+  color: var(--muted);
+  margin-left: auto;
+}
 .class-row {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 7px;
 }
-.class-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-.class-name { flex: 1; font-size: 0.84em; color: var(--muted2); }
+.class-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.class-name {
+  flex: 1;
+  font-size: 0.84em;
+  color: var(--muted2);
+}
 .class-input {
   width: 64px;
   background: var(--bg2);
@@ -240,7 +265,7 @@ h1 span { color: var(--accent); }
   border-radius: 7px;
   padding: 5px 8px;
   color: var(--text);
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Sarabun', sans-serif;
   font-size: 0.85em;
   text-align: center;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -252,7 +277,11 @@ h1 span { color: var(--accent); }
 }
 
 /* ── SCORE PANEL ── */
-.score-block { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.score-block {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
 .score-block-title {
   font-size: 0.73em;
   letter-spacing: 1.5px;
@@ -282,6 +311,7 @@ h1 span { color: var(--accent); }
 .score-subtotal-label { color: var(--text); }
 .score-subtotal-val { color: var(--accent); }
 
+/* bonus lines */
 .bonus-line {
   display: flex;
   align-items: flex-start;
@@ -296,6 +326,7 @@ h1 span { color: var(--accent); }
 .bonus-positive { color: var(--green); }
 .bonus-zero { color: var(--muted); }
 
+/* total bar */
 .total-bar {
   background: linear-gradient(135deg, rgba(232,184,75,0.1), rgba(232,184,75,0.04));
   border: 1px solid rgba(232,184,75,0.25);
@@ -321,6 +352,7 @@ h1 span { color: var(--accent); }
   line-height: 1;
 }
 
+/* score bar visual */
 .score-bar-group {
   margin-top: 14px;
   padding-top: 14px;
@@ -341,13 +373,31 @@ h1 span { color: var(--accent); }
   display: flex;
   gap: 1px;
 }
-.bar-seg { height: 100%; transition: width 0.4s ease; border-radius: 1px; }
+.bar-seg {
+  height: 100%;
+  transition: width 0.4s ease;
+  border-radius: 1px;
+}
 .bar-level { background: linear-gradient(90deg, #3a7bd5, #5b9cf6); }
 .bar-melee { background: linear-gradient(90deg, #c95c2e, #e8724a); }
 .bar-set   { background: linear-gradient(90deg, #b8930a, #e8b84b); }
-.bar-legend { display: flex; gap: 12px; margin-top: 7px; flex-wrap: wrap; }
-.legend-item { display: flex; align-items: center; gap: 5px; font-size: 0.7em; color: var(--muted2); }
-.legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+.bar-legend {
+  display: flex;
+  gap: 12px;
+  margin-top: 7px;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7em;
+  color: var(--muted2);
+}
+.legend-dot {
+  width: 8px; height: 8px;
+  border-radius: 2px;
+}
 
 /* ── BUTTONS ── */
 .btn {
@@ -358,7 +408,7 @@ h1 span { color: var(--accent); }
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Sarabun', sans-serif;
   font-weight: 600;
   transition: all 0.2s;
   padding: 9px 14px;
@@ -381,17 +431,32 @@ h1 span { color: var(--accent); }
   color: rgba(232,91,91,0.7);
   margin-top: 8px;
 }
-.btn-reset:hover { background: rgba(232,91,91,0.14); color: var(--red); }
+.btn-reset:hover {
+  background: rgba(232,91,91,0.14);
+  color: var(--red);
+}
 
-/* ── WARNINGS ── */
-.missing-warn { font-size: 0.74em; color: var(--red); margin-top: 4px; line-height: 1.4; }
-.all-ok-note  { font-size: 0.74em; color: var(--green); margin-top: 4px; }
+/* ── MISSING CLASS WARNING ── */
+.missing-warn {
+  font-size: 0.74em;
+  color: var(--red);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.all-ok-note {
+  font-size: 0.74em;
+  color: var(--green);
+  margin-top: 4px;
+}
 
+/* ── DIVIDER ── */
 .divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border2), transparent);
   margin: 12px 0;
 }
+
+/* ── TOOLTIP / NOTE ── */
 .info-note {
   background: rgba(91,156,246,0.07);
   border: 1px solid rgba(91,156,246,0.15);
@@ -403,6 +468,8 @@ h1 span { color: var(--accent); }
   margin-bottom: 14px;
 }
 .info-note b { color: var(--accent); }
+
+/* column char totals */
 .class-total-row {
   display: flex;
   justify-content: space-between;
@@ -420,7 +487,7 @@ h1 span { color: var(--accent); }
 <div class="header">
   <div class="header-badge">Guild Competition</div>
   <h1>CABAL <span>Guild</span> Score</h1>
-  <p class="header-sub">Level-based Guild Competition Score Calculator · Player Reference</p>
+  <p class="header-sub">ระบบคำนวณคะแนนการแข่งขันแบบเก็บเวล · ตัวอย่างสำหรับผู้เล่น</p>
 </div>
 
 <div class="main-grid">
@@ -438,15 +505,15 @@ h1 span { color: var(--accent); }
       </div>
 
       <div class="info-note">
-        Enter the number of characters that qualify at each level tier.<br>
-        <b>Note:</b> Each character is counted in their <b>highest qualifying tier</b> only.<br>
-        <span style="color:var(--muted);font-size:0.93em">Lv190–195 / Lv196–OVL14 / OVL15–OVL29 / OVL30+</span>
+        กรอกจำนวนตัวละครที่ผ่านเงื่อนไขแต่ละระดับ<br>
+        <b>หมายเหตุ:</b> ตัวละครแต่ละตัวนับใน <b>ช่วงเลเวลสูงสุดที่ผ่าน</b> เพียง 1 ช่อง<br>
+        <span style="color:var(--muted);font-size:0.93em">Lv190–195 / Lv196–OVL1 / OVL1–19 / OVL 20+</span>
       </div>
 
       <div class="char-counter" id="levelCounterBox">
         <div>
-          <div class="counter-label">Total from Levels</div>
-          <div class="counter-val"><span id="lvTotal">0</span> <span style="color:var(--muted);font-size:0.8em;font-weight:400">characters</span></div>
+          <div class="counter-label">รวมจากเลเวล</div>
+          <div class="counter-val"><span id="lvTotal">0</span> <span style="color:var(--muted);font-size:0.8em;font-weight:400">ตัวละคร</span></div>
         </div>
         <div id="lvStatus" style="font-size:0.8em;font-weight:600"></div>
       </div>
@@ -454,7 +521,7 @@ h1 span { color: var(--accent); }
         <div class="counter-bar" id="lvBar"></div>
       </div>
 
-      <!-- Lv 190 – 195 -->
+      <!-- Lv 200 -->
       <div class="level-row">
         <div class="tier-dot" style="background:#4a7fc4"></div>
         <div class="tier-label">Lv 190 – 195</div>
@@ -462,18 +529,18 @@ h1 span { color: var(--accent); }
         <div class="tier-mult">× <span id="disp_m0">0.3</span> pt</div>
         <div class="tier-score-preview" id="prev_lv200">0</div>
       </div>
-      <!-- OVL 10 – 19 -->
+      <!-- OVL 10 -->
       <div class="level-row">
         <div class="tier-dot" style="background:#7a9fd4"></div>
-        <div class="tier-label ovl">Lv 196 – OVL 14</div>
+        <div class="tier-label ovl">Lv 196 – OVL 1</div>
         <input class="num-input" type="number" id="ovl10" value="0" min="0" max="100" oninput="calc()">
         <div class="tier-mult">× <span id="disp_m1">0.6</span> pt</div>
         <div class="tier-score-preview" id="prev_ovl10">0</div>
       </div>
-      <!-- OVL 20 – 29 -->
+      <!-- OVL 20 -->
       <div class="level-row">
         <div class="tier-dot" style="background:#bfa94a"></div>
-        <div class="tier-label ovl">OVL 15 – OVL 29</div>
+        <div class="tier-label ovl">OVL 1 – 19</div>
         <input class="num-input" type="number" id="ovl20" value="0" min="0" max="100" oninput="calc()">
         <div class="tier-mult">× <span id="disp_m2">0.72</span> pt</div>
         <div class="tier-score-preview" id="prev_ovl20">0</div>
@@ -481,14 +548,14 @@ h1 span { color: var(--accent); }
       <!-- OVL 30 -->
       <div class="level-row">
         <div class="tier-dot" style="background:#e8b84b"></div>
-        <div class="tier-label ovl">OVL 30+</div>
+        <div class="tier-label ovl">OVL 20+</div>
         <input class="num-input" type="number" id="ovl30" value="0" min="0" max="100" oninput="calc()">
         <div class="tier-mult">× <span id="disp_m3">0.84</span> pt</div>
         <div class="tier-score-preview" id="prev_ovl30">0</div>
       </div>
 
-      <button class="btn btn-example" onclick="loadExample()">📋 Load Guild A Example</button>
-      <button class="btn btn-reset" onclick="resetAll()">↺ Reset All</button>
+      <button class="btn btn-example" onclick="loadExample()">📋 โหลดตัวอย่าง Guild A</button>
+      <button class="btn btn-reset" onclick="resetAll()">↺ รีเซ็ตทั้งหมด</button>
     </div>
 
     <!-- CLASS PANEL -->
@@ -500,8 +567,8 @@ h1 span { color: var(--accent); }
 
       <div class="char-counter">
         <div>
-          <div class="counter-label">Total from Classes</div>
-          <div class="counter-val"><span id="classTotal">0</span> <span style="color:var(--muted);font-size:0.8em;font-weight:400">characters</span></div>
+          <div class="counter-label">รวมจากอาชีพ</div>
+          <div class="counter-val"><span id="classTotal">0</span> <span style="color:var(--muted);font-size:0.8em;font-weight:400">ตัวละคร</span></div>
         </div>
         <div id="classStatus" style="font-size:0.8em;font-weight:600"></div>
       </div>
@@ -513,7 +580,7 @@ h1 span { color: var(--accent); }
       <div class="class-group">
         <div class="class-group-header">
           <div class="class-group-badge melee-badge">⚔ Melee</div>
-          <div class="class-bonus-note">+<span id="disp_mMelee">0.15</span> pts/char</div>
+          <div class="class-bonus-note">+<span id="disp_mMelee">0.15</span> คะแนน/ตัว</div>
         </div>
         <div class="class-row">
           <div class="class-dot" style="background:var(--melee)"></div>
@@ -541,7 +608,7 @@ h1 span { color: var(--accent); }
           <input class="class-input" type="number" id="c_glad" value="0" min="0" oninput="calc()">
         </div>
         <div class="class-total-row">
-          <span>Melee Total</span><span id="meleeCountDisp" style="color:var(--melee)">0 chars</span>
+          <span>รวม Melee</span><span id="meleeCountDisp" style="color:var(--melee)">0 ตัว</span>
         </div>
       </div>
 
@@ -551,7 +618,7 @@ h1 span { color: var(--accent); }
       <div class="class-group">
         <div class="class-group-header">
           <div class="class-group-badge range-badge">🏹 Range</div>
-          <div class="class-bonus-note" style="color:var(--muted)">No Bonus</div>
+          <div class="class-bonus-note" style="color:var(--muted)">ไม่มีโบนัส</div>
         </div>
         <div class="class-row">
           <div class="class-dot" style="background:var(--range)"></div>
@@ -574,7 +641,7 @@ h1 span { color: var(--accent); }
           <input class="class-input" type="number" id="c_fg" value="0" min="0" oninput="calc()">
         </div>
         <div class="class-total-row">
-          <span>Range Total</span><span id="rangeCountDisp" style="color:var(--range)">0 chars</span>
+          <span>รวม Range</span><span id="rangeCountDisp" style="color:var(--range)">0 ตัว</span>
         </div>
       </div>
     </div>
@@ -591,38 +658,38 @@ h1 span { color: var(--accent); }
 
     <!-- Level Score Block -->
     <div class="score-block">
-      <div class="score-block-title">Level Score</div>
+      <div class="score-block-title">คะแนนจากเลเวล</div>
       <div class="score-line">
-        <div class="score-line-label">Lv 190–195 — <span id="s_lv200_n">0</span> chars × <span id="s_m0">0.3</span></div>
+        <div class="score-line-label">Lv 190–195 — <span id="s_lv200_n">0</span> ตัว × <span id="s_m0">0.3</span></div>
         <div class="score-line-val" id="s_lv200_v">0</div>
       </div>
       <div class="score-line">
-        <div class="score-line-label">Lv 196–OVL 14 — <span id="s_ovl10_n">0</span> chars × <span id="s_m1">0.6</span></div>
+        <div class="score-line-label">Lv 196–OVL 1 — <span id="s_ovl10_n">0</span> ตัว × <span id="s_m1">0.6</span></div>
         <div class="score-line-val" id="s_ovl10_v">0</div>
       </div>
       <div class="score-line">
-        <div class="score-line-label">OVL 15–29 — <span id="s_ovl20_n">0</span> chars × <span id="s_m2">0.72</span></div>
+        <div class="score-line-label">OVL 1–19 — <span id="s_ovl20_n">0</span> ตัว × <span id="s_m2">0.72</span></div>
         <div class="score-line-val" id="s_ovl20_v">0</div>
       </div>
       <div class="score-line">
-        <div class="score-line-label">OVL 30+ — <span id="s_ovl30_n">0</span> chars × <span id="s_m3">0.84</span></div>
+        <div class="score-line-label">OVL 20+ — <span id="s_ovl30_n">0</span> ตัว × <span id="s_m3">0.84</span></div>
         <div class="score-line-val" id="s_ovl30_v">0</div>
       </div>
       <div class="score-subtotal">
-        <div class="score-subtotal-label">Level Score Total</div>
+        <div class="score-subtotal-label">รวมคะแนนเลเวล</div>
         <div class="score-subtotal-val" id="subtotal_level">0</div>
       </div>
     </div>
 
     <!-- Bonus Block -->
     <div class="score-block">
-      <div class="score-block-title">Special Bonuses</div>
+      <div class="score-block-title">โบนัสพิเศษ</div>
 
       <!-- Melee bonus -->
       <div class="bonus-line">
         <div class="bonus-desc">
           <div class="bonus-name">⚔️ Melee Bonus</div>
-          <div class="bonus-detail" id="b_melee_detail">0 chars × 0.15</div>
+          <div class="bonus-detail" id="b_melee_detail">0 ตัว × 0.15</div>
         </div>
         <div class="bonus-val bonus-positive" id="b_melee_val">+0</div>
       </div>
@@ -630,8 +697,8 @@ h1 span { color: var(--accent); }
       <!-- Set bonus -->
       <div class="bonus-line">
         <div class="bonus-desc">
-          <div class="bonus-name">🌐 Set Bonus (All 9 Classes)</div>
-          <div class="bonus-detail" id="b_set_detail">0 sets × 0.6</div>
+          <div class="bonus-name">🌐 Set Bonus (ครบ 9 อาชีพ)</div>
+          <div class="bonus-detail" id="b_set_detail">0 เซ็ต × 0.6</div>
           <div id="b_set_status"></div>
         </div>
         <div class="bonus-val" id="b_set_val">+0</div>
@@ -640,14 +707,14 @@ h1 span { color: var(--accent); }
 
     <!-- TOTAL -->
     <div class="total-bar">
-      <div class="total-label">Total Score</div>
+      <div class="total-label">คะแนนรวม</div>
       <div class="total-val" id="grandTotal">0</div>
     </div>
 
     <!-- Score composition bar -->
     <div class="score-bar-group">
       <div class="score-bar-label">
-        <span>Score Composition</span>
+        <span>สัดส่วนคะแนน</span>
         <span id="composPct"></span>
       </div>
       <div class="score-bar-track">
@@ -695,18 +762,22 @@ function onMultChange() {
 
 // ─── Main Calculator ───────────────────────────────
 function calc() {
+  // Multipliers
   const mLv  = gv('m_lv200'), mO10 = gv('m_ovl10');
   const mO20 = gv('m_ovl20'), mO30 = gv('m_ovl30');
   const mMel = gv('m_melee'), mSet = gv('m_set');
 
+  // Level counts
   const nLv  = gv('lv200'), nO10 = gv('ovl10');
   const nO20 = gv('ovl20'), nO30 = gv('ovl30');
   const lvTotal = nLv + nO10 + nO20 + nO30;
 
+  // Level scores
   const sLv  = nLv * mLv, sO10 = nO10 * mO10;
   const sO20 = nO20 * mO20, sO30 = nO30 * mO30;
   const levelScore = sLv + sO10 + sO20 + sO30;
 
+  // Class counts
   const cB  = gv('c_blader'), cW = gv('c_warrior'), cFS = gv('c_fs');
   const cFB = gv('c_fb'),     cG = gv('c_glad');
   const cFA = gv('c_fa'),     cWz = gv('c_wiz');
@@ -715,17 +786,20 @@ function calc() {
   const meleeCount = cB + cW + cFS + cFB + cG;
   const rangeCount = cFA + cWz + cDM + cFG;
   const classTotal = meleeCount + rangeCount;
+
   const meleeBonus = meleeCount * mMel;
 
+  // Set bonus — min across all 9 classes (needs all 9 > 0)
   const classCounts = [cB, cW, cFS, cFB, cG, cFA, cWz, cDM, cFG];
   const classNames  = ['Blader','Warrior','Force Shield','Force Blader','Gladiator',
                        'Force Archer','Wizard','Dark Mage','Force Gunner'];
   const allPresent  = classCounts.every(c => c > 0);
   const sets        = allPresent ? Math.min(...classCounts) : 0;
   const setBonus    = sets * mSet;
-  const grand       = levelScore + meleeBonus + setBonus;
 
-  // Level previews
+  const grand = levelScore + meleeBonus + setBonus;
+
+  // ─── Update UI: Level preview ───────────────────
   set('prev_lv200', fmt(sLv));  set('prev_ovl10', fmt(sO10));
   set('prev_ovl20', fmt(sO20)); set('prev_ovl30', fmt(sO30));
 
@@ -733,24 +807,24 @@ function calc() {
   g('lvBar').style.width = Math.min(lvTotal / 100 * 100, 100) + '%';
   set('lvTotal', lvTotal);
   const lvSt = g('lvStatus');
-  if      (lvTotal > 100)    { lvSt.innerHTML = '<span style="color:var(--red)">⚠ Over 100</span>'; }
-  else if (lvTotal === 100)  { lvSt.innerHTML = '<span style="color:var(--green)">✓ Full 100</span>'; }
-  else if (lvTotal > 0)      { lvSt.innerHTML = `<span style="color:var(--muted2)">${100-lvTotal} remaining</span>`; }
-  else                       { lvSt.textContent = ''; }
+  if      (lvTotal > 100) { lvSt.innerHTML = '<span style="color:var(--red)">⚠ เกิน 100</span>'; }
+  else if (lvTotal === 100) { lvSt.innerHTML = '<span style="color:var(--green)">✓ ครบ 100</span>'; }
+  else if (lvTotal > 0)   { lvSt.innerHTML = `<span style="color:var(--muted2)">เหลือ ${100-lvTotal} ตัว</span>`; }
+  else                    { lvSt.textContent = ''; }
 
   // Class counter
   g('classBar').style.width = Math.min(classTotal / 100 * 100, 100) + '%';
   set('classTotal', classTotal);
   const cSt = g('classStatus');
-  if      (classTotal > 100)   { cSt.innerHTML = '<span style="color:var(--red)">⚠ Over 100</span>'; }
-  else if (classTotal === 100) { cSt.innerHTML = '<span style="color:var(--green)">✓ Full 100</span>'; }
-  else if (classTotal > 0)     { cSt.innerHTML = `<span style="color:var(--muted2)">${100-classTotal} remaining</span>`; }
-  else                         { cSt.textContent = ''; }
+  if      (classTotal > 100) { cSt.innerHTML = '<span style="color:var(--red)">⚠ เกิน 100</span>'; }
+  else if (classTotal === 100) { cSt.innerHTML = '<span style="color:var(--green)">✓ ครบ 100</span>'; }
+  else if (classTotal > 0)   { cSt.innerHTML = `<span style="color:var(--muted2)">เหลือ ${100-classTotal} ตัว</span>`; }
+  else                       { cSt.textContent = ''; }
 
-  set('meleeCountDisp', meleeCount + ' chars');
-  set('rangeCountDisp', rangeCount + ' chars');
+  set('meleeCountDisp', meleeCount + ' ตัว');
+  set('rangeCountDisp', rangeCount + ' ตัว');
 
-  // Score breakdown
+  // ─── Score breakdown ───────────────────────────
   set('s_lv200_n', nLv);  set('s_lv200_v', fmt(sLv));
   set('s_ovl10_n', nO10); set('s_ovl10_v', fmt(sO10));
   set('s_ovl20_n', nO20); set('s_ovl20_v', fmt(sO20));
@@ -758,21 +832,21 @@ function calc() {
   set('subtotal_level', fmt(levelScore));
 
   // Melee bonus
-  set('b_melee_detail', `${meleeCount} chars × ${fmt(mMel)}`);
-  set('b_melee_val', '+' + fmt(meleeBonus));
+  set('b_melee_detail', `${meleeCount} ตัว × ${fmt(mMel)}`);
+  set('b_melee_val',    '+' + fmt(meleeBonus));
   g('b_melee_val').className = 'bonus-val ' + (meleeBonus > 0 ? 'bonus-positive' : 'bonus-zero');
 
   // Set bonus
-  set('b_set_detail', `${sets} sets × ${fmt(mSet)}`);
-  set('b_set_val', '+' + fmt(setBonus));
+  set('b_set_detail', `${sets} เซ็ต × ${fmt(mSet)}`);
+  set('b_set_val',    '+' + fmt(setBonus));
   g('b_set_val').className = 'bonus-val ' + (setBonus > 0 ? 'bonus-positive' : 'bonus-zero');
 
   const statusEl = g('b_set_status');
   if (!allPresent && classTotal > 0) {
     const missing = classNames.filter((_, i) => classCounts[i] === 0);
-    statusEl.innerHTML = `<div class="missing-warn">⚠ Missing: ${missing.join(', ')}</div>`;
+    statusEl.innerHTML = `<div class="missing-warn">⚠ ขาด: ${missing.join(', ')}</div>`;
   } else if (allPresent) {
-    statusEl.innerHTML = `<div class="all-ok-note">✅ All 9 classes present — ${sets} set(s)</div>`;
+    statusEl.innerHTML = `<div class="all-ok-note">✅ ครบ 9 อาชีพ — ${sets} เซ็ต</div>`;
   } else {
     statusEl.innerHTML = '';
   }
@@ -794,10 +868,13 @@ function calc() {
 
 // ─── Load Example ──────────────────────────────────
 function loadExample() {
+  // Level distribution (Guild A example)
   g('lv200').value = 50;
   g('ovl10').value = 35;
   g('ovl20').value = 15;
   g('ovl30').value = 10;
+
+  // 100 chars: 11 full sets + 1 leftover Melee (Blader gets +1)
   g('c_blader').value  = 12;
   g('c_warrior').value = 11;
   g('c_fs').value      = 11;
@@ -807,6 +884,7 @@ function loadExample() {
   g('c_wiz').value     = 11;
   g('c_dm').value      = 11;
   g('c_fg').value      = 11;
+
   calc();
 }
 
@@ -822,4 +900,5 @@ function resetAll() {
 onMultChange();
 </script>
 </body>
+</html>
 </html>
