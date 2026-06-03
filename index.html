@@ -440,7 +440,7 @@ h1 span { color: var(--accent); }
       <div class="info-note">
         Enter the number of characters that qualify at each level tier.<br>
         <b>Note:</b> Each character is counted in their <b>highest qualifying tier</b> only.<br>
-        <span style="color:var(--muted);font-size:0.93em">Lv190–195 / Lv196–199 / OVL1–OVL19 / OVL20+</span>
+        <span style="color:var(--muted);font-size:0.93em">Lv.190–195 / Lv.196–199 / OVL.1(LV.200)– OVL.19 / OVL.20+</span>
       </div>
 
       <div class="char-counter" id="levelCounterBox">
@@ -457,7 +457,7 @@ h1 span { color: var(--accent); }
       <!-- Lv 190 – 195 -->
       <div class="level-row">
         <div class="tier-dot" style="background:#4a7fc4"></div>
-        <div class="tier-label">Lv 190 – 195</div>
+        <div class="tier-label">Lv.190 – 195</div>
         <input class="num-input" type="number" id="lv200" value="0" min="0" max="100" oninput="calc()">
         <div class="tier-mult">× <span id="disp_m0">0.3</span> pt</div>
         <div class="tier-score-preview" id="prev_lv200">0</div>
@@ -465,7 +465,7 @@ h1 span { color: var(--accent); }
       <!-- OVL 10 – 19 -->
       <div class="level-row">
         <div class="tier-dot" style="background:#7a9fd4"></div>
-        <div class="tier-label ovl">Lv 196 – 199</div>
+        <div class="tier-label ovl">Lv.196 – 199</div>
         <input class="num-input" type="number" id="ovl10" value="0" min="0" max="100" oninput="calc()">
         <div class="tier-mult">× <span id="disp_m1">0.6</span> pt</div>
         <div class="tier-score-preview" id="prev_ovl10">0</div>
@@ -473,7 +473,7 @@ h1 span { color: var(--accent); }
       <!-- OVL 20 – 29 -->
       <div class="level-row">
         <div class="tier-dot" style="background:#bfa94a"></div>
-        <div class="tier-label ovl">OVL 1 – 19</div>
+        <div class="tier-label ovl">OVL.1(LV.200)– OVL.19</div>
         <input class="num-input" type="number" id="ovl20" value="0" min="0" max="100" oninput="calc()">
         <div class="tier-mult">× <span id="disp_m2">0.72</span> pt</div>
         <div class="tier-score-preview" id="prev_ovl20">0</div>
@@ -481,7 +481,7 @@ h1 span { color: var(--accent); }
       <!-- OVL 30 -->
       <div class="level-row">
         <div class="tier-dot" style="background:#e8b84b"></div>
-        <div class="tier-label ovl">OVL 20+</div>
+        <div class="tier-label ovl">OVL.20+</div>
         <input class="num-input" type="number" id="ovl30" value="0" min="0" max="100" oninput="calc()">
         <div class="tier-mult">× <span id="disp_m3">0.84</span> pt</div>
         <div class="tier-score-preview" id="prev_ovl30">0</div>
@@ -593,19 +593,19 @@ h1 span { color: var(--accent); }
     <div class="score-block">
       <div class="score-block-title">Level Score</div>
       <div class="score-line">
-        <div class="score-line-label">Lv 190–195 — <span id="s_lv200_n">0</span> chars × <span id="s_m0">0.3</span></div>
+        <div class="score-line-label">Lv.190–195 — <span id="s_lv200_n">0</span> chars × <span id="s_m0">0.3</span></div>
         <div class="score-line-val" id="s_lv200_v">0</div>
       </div>
       <div class="score-line">
-        <div class="score-line-label">Lv 196–199 — <span id="s_ovl10_n">0</span> chars × <span id="s_m1">0.6</span></div>
+        <div class="score-line-label">Lv.196–199 — <span id="s_ovl10_n">0</span> chars × <span id="s_m1">0.6</span></div>
         <div class="score-line-val" id="s_ovl10_v">0</div>
       </div>
       <div class="score-line">
-        <div class="score-line-label">OVL 1–19 — <span id="s_ovl20_n">0</span> chars × <span id="s_m2">0.72</span></div>
+        <div class="score-line-label">OVL.1(LV.200)–OVL.19 — <span id="s_ovl20_n">0</span> chars × <span id="s_m2">0.72</span></div>
         <div class="score-line-val" id="s_ovl20_v">0</div>
       </div>
       <div class="score-line">
-        <div class="score-line-label">OVL 20+ — <span id="s_ovl30_n">0</span> chars × <span id="s_m3">0.84</span></div>
+        <div class="score-line-label">OVL.20+ — <span id="s_ovl30_n">0</span> chars × <span id="s_m3">0.84</span></div>
         <div class="score-line-val" id="s_ovl30_v">0</div>
       </div>
       <div class="score-subtotal">
